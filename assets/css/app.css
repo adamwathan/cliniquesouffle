@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind screens;
+@tailwind utilities;
+
+.container {
+  @apply px-3;
+  @screen md {
+    @apply px-0;
+  }
+}

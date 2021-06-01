@@ -1,0 +1,6 @@
+name: clinique-du-souffle
+recipe: lamp
+config:
+  webroot: .
+  via: nginx
+  database: mariadb
