@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "laravel-mix": "^6.0.19"
+    "laravel-mix": "^6.0.19",
+    "postcss-nested": "^5.0.5",
+    "tiny-slider": "^2.9.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",

@@ -9,7 +9,7 @@
     <title>Accueil - Groupe 5 Santé</title>
 </head>
 <body>
-    <header class="container flex flex-col md:flex-row">
+    <header class="container flex flex-col md:flex-row justify-between items-center my-5">
         <div class="logo">
             <img src="assets/images/Korian_LogoCouleur.png" alt="" class="w-full">
         </div>
@@ -17,5 +17,33 @@
             <img src="assets/images/GROUPE_CONTACT.png" alt="" class="w-full">
         </div>
     </header>
+    <nav class="border border-gray-300">
+        <ul class="container grid grid-cols-3 divide-x-2 border-r border-l">
+            <li class="menu-item">
+                <a href="">
+                    Accueil
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="">
+                    Patient
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="">
+                    Médecin
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="slider">
+        <div class="item relative">
+            <img src="assets/images/slide1.png" alt="" class="w-full object-cover">
+            <div class="container caption text-3xl">
+                <span>Clinique du souffle</span>
+                <span class="block">Le patient au coeur de nos actions</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

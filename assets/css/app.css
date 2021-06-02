@@ -1,11 +1,31 @@
 @tailwind base;
 @tailwind components;
-@tailwind screens;
 @tailwind utilities;
+@tailwind screens;
 
 .container {
   @apply px-3;
   @screen md {
     @apply px-0;
+  }
+}
+
+nav {
+  .menu-item {
+    & a {
+      @apply py-3 text-center block w-full;
+    }
+  }
+}
+
+.slider {
+  .item {
+    clip-path: polygon(100% 0, 100% 73%, 73% 93%, 0 60%, 0 0);
+    & img {
+      height: 700px;
+    }
+    .caption {
+      @apply absolute top-0 left-1/2 transform -translate-x-1/2 mt-10;
+    }
   }
 }
