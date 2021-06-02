@@ -1,3 +1,49 @@
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+
+require_once 'vendor/autoload.php';
+    $required = [];
+    $error = false;
+    if (!empty($_POST)) {
+        // Nettoyage des données du formulaire
+        foreach ($_POST as $key => $value) {
+            switch ($key) {
+                case 'email':
+                    if (filter_var($value, FILTER_VALIDATE_EMAIL) === false) {
+                        $error[$key] = "Email non valide";
+                    }
+                    break;
+                default :
+                    break;
+            }
+            $_POST[$key] = filter_var($value, FILTER_SANITIZE_STRING);
+        }
+        // Si pas d'erreurs envoi de l'email.
+        if (!$error) {
+            $mail = new PHPMailer(true);
+            $mail->isHTML(true);
+
+            // For HELO APP Test email
+            $mail->isSMTP();                                            //Send using SMTP
+            $mail->Host       = 'host.docker.internal';                     //Set the SMTP server to send through
+            $mail->Port       = 2525;
+
+            try {
+                $mail->setFrom('contact@korian.fr', 'Groupe Korian');
+                $mail->addAddress('manuel@hybride-conseil.fr', $_POST['nom']);
+                $mail->Subject = "[CLINIQUE DU SOUFFLE] ".$_POST['subject'];
+                $mail->Body    = "Message du formulaire de contact du site cliniquesdusouffle.fr <br>
+                Nom : {$_POST['nom']} <br>
+                Email : {$_POST['email']} <br>
+                Message : <br> <br> {$_POST['content']}
+                ";
+            } catch (Exception $exception) {
+                echo $exception->getMessage();
+            }
+        }
+    }
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -242,12 +288,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="form text-center max-w-xl mx-auto">
+                <div class="form text-center max-w-xl mx-auto" id="form">
                     <h2 class="font-bask text-3xl">Nous contacter</h2>
                     <div class="form-content">
-                        <form action="" method="post" class="space-y-5">
+                        <form action="/#form" method="post" class="space-y-5">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                <input type="text" placeholder="Nom j'imagine ?">
+                                <input type="text" placeholder="Nom">
                                 <input type="text" placeholder="Email">
                             </div>
                             <input type="text" placeholder="Sujet">
