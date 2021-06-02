@@ -3,6 +3,27 @@
 @tailwind utilities;
 @tailwind screens;
 
+@layer base {
+  p, h1, h2, h3 {
+    @apply mb-5;
+  }
+  input[type=text], input[type=email], textarea {
+    @apply border border-white bg-transparent p-2 w-full;
+
+    &::placeholder {
+      @apply text-white;
+    }
+  }
+
+  button[type=submit] {
+    @apply bg-white text-souffle block py-1 w-1/4 mx-auto uppercase;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   @apply px-3;
   @screen md {
@@ -10,22 +31,104 @@
   }
 }
 
+.btn-link {
+  @apply uppercase text-2xl relative pr-3 py-2;
+  &:after {
+    @apply absolute inset-y-0 right-0 border-r-2 border-white;
+    content: '';
+  }
+
+  &.btn-souffle {
+    &:after {
+      @apply border-souffle;
+    }
+  }
+}
+
 nav {
   .menu-item {
     & a {
-      @apply py-3 text-center block w-full;
+      @apply py-3 text-center block w-full uppercase text-primary-default font-bold;
     }
   }
 }
 
 .slider {
   .item {
+    @apply relative;
     clip-path: polygon(100% 0, 100% 73%, 73% 93%, 0 60%, 0 0);
+    &:after {
+      @apply absolute inset-0 z-10;
+      content: '';
+      background: rgb(255,255,255);
+      background: -moz-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+      background: -webkit-linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+      background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+    }
     & img {
       height: 700px;
     }
     .caption {
-      @apply absolute top-0 left-1/2 transform -translate-x-1/2 mt-10;
+      @apply absolute top-0 left-1/2 transform -translate-x-1/2 mt-10 z-20;
     }
+  }
+}
+
+
+.slide-wrap {
+  @apply relative;
+  .slide-nav {
+    @apply flex items-center absolute z-50 space-x-3;
+    top: 500px;
+    left: 10%;
+    @screen xl {
+      top: 300px;
+    }
+
+    & button {
+      @apply w-4 h-4 bg-gray-400 rounded-full;
+      &.tns-nav-active {
+        @apply bg-souffle w-5 h-5;
+      }
+    }
+  }
+}
+
+.who-are {
+  @apply py-20;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('/assets/images/who-are-background.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.cliniques {
+  .clinique {
+      @apply space-y-5 flex justify-center items-center flex-col mb-16;
+    .place {
+      @apply text-center text-primary-default font-bold;
+      & span {
+        @apply block text-black font-normal uppercase;
+      }
+    }
+    .link {
+      & a {
+        @apply text-souffle font-bold;
+      }
+    }
+  }
+}
+
+.top-footer {
+  background-image: url('/assets/images/footer-bg.png');
+  background-repeat: no-repeat;
+  height: 218px;
+  top: -218px;
+  left: 0;
+  right: 0;
+  background-size: contain;
+  background-position: center bottom;
+  @screen md {
+    background-size: 100% 100%;
+    background-position: center top;
   }
 }

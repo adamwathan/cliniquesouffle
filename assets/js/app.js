@@ -2,8 +2,11 @@ import {tns} from "tiny-slider/src/tiny-slider";
 
 
 let slider = tns({
-   container: '.slider',
+    container: '.slider',
     items : 1,
     slideBy: 'page',
-    autoplay: true
+    autoplay: true,
+    autoplayButtonOutput: false,
+    controls: false,
+    navContainer: '.slide-nav'
 });

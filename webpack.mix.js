@@ -6,3 +6,4 @@ mix.options({
 
 mix.setPublicPath('dist')
 mix.css('assets/css/app.css', 'css/');
+mix.js('assets/js/app.js', 'js/');
