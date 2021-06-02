@@ -87,11 +87,11 @@
 <section class="who-are">
     <div class="container grid grid-cols-1 md:grid-cols-2 text-3xl space-y-10 md:space-y-0">
         <div class="patient flex flex-col items-center justify-center text-souffle">
-            <i class="fal fa-user fa-10x block"></i>
+            <img src="/assets/images/patient.png" alt="" class="block mb-5">
             Vous êtes un patient ?
         </div>
         <div class="nurse flex flex-col items-center justify-center text-primary-default">
-            <i class="fal fa-user-nurse fa-10x block"></i>
+            <img src="/assets/images/medical.png" alt="" class="block mb-5">
             Vous êtes un médecin ?
         </div>
     </div>
