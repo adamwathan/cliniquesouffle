@@ -325,8 +325,8 @@ require_once 'vendor/autoload.php';
                     </div>
                 </div>
                 <div class="text-center mt-10 font-open">
-                    <div class="text-4xl">
-                        www.cliniquesdusouffle.com
+                    <div class="text-3xl md:text-4xl">
+                        www.<strong class="font-bold">cliniquesdusouffle</strong>.com
                     </div>
                     Une société du <strong class="font-bold">G</strong>roupe <strong class="font-bold">K</strong>orian
                 </div>

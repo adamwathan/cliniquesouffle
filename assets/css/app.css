@@ -48,7 +48,10 @@ html {
 nav {
   .menu-item {
     & a {
-      @apply py-3 text-center block w-full uppercase text-primary-default font-bold;
+      @apply py-3 text-center block w-full uppercase text-primary-default font-bold transition duration-500;
+      &:hover {
+        @apply bg-primary-default text-white;
+      }
     }
   }
 }
