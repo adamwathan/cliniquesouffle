@@ -6,6 +6,22 @@ require_once 'vendor/autoload.php';
     $required = [];
     $error = false;
     if (!empty($_POST)) {
+
+        $data = array(
+            'secret' => "6LcQ1QsbAAAAAG6tkBihRVZE-Eg9YL3zJqV_5ALN",
+            'response' => $_POST['g-recaptcha-response']
+        );
+
+        $verify = curl_init();
+        curl_setopt($verify, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+        curl_setopt($verify, CURLOPT_POST, true);
+        curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($verify, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($verify);
+
+        $response = json_decode($response);
+
         // Nettoyage des données du formulaire
         foreach ($_POST as $key => $value) {
             switch ($key) {
@@ -20,7 +36,9 @@ require_once 'vendor/autoload.php';
             $_POST[$key] = filter_var($value, FILTER_SANITIZE_STRING);
         }
         // Si pas d'erreurs envoi de l'email.
-        if (!$error) {
+
+
+        if (!$error && $response['success'] == true) {
             $mail = new PHPMailer(true);
             $mail->isHTML(true);
 
@@ -33,12 +51,13 @@ require_once 'vendor/autoload.php';
                 $mail->setFrom('contact@korian.fr', 'Groupe Korian');
                 $mail->addAddress('manuel@hybride-conseil.fr', $_POST['nom']);
                 $mail->Subject = "[CLINIQUE DU SOUFFLE] ".$_POST['subject'];
-                $mail->Body    = "Message du formulaire de contact du site cliniquesdusouffle.fr <br>
-                Nom : {$_POST['nom']} <br>
-                Email : {$_POST['email']} <br>
-                Message : <br> <br> {$_POST['content']}
-                ";
-            } catch (Exception $exception) {
+                $mail->Body    = "<html> Message du formulaire de contact du site cliniquesdusouffle.fr <br> <br>
+                <strong>Nom :</strong> {$_POST['nom']} <br>
+                <strong>Email :</strong> {$_POST['email']} <br>
+                <strong>Message :</strong><br> {$_POST['message']}
+                </html>";
+                $mail->send();
+            } catch (\PHPMailer\PHPMailer\Exception $exception) {
                 echo $exception->getMessage();
             }
         }
@@ -291,14 +310,17 @@ require_once 'vendor/autoload.php';
                 <div class="form text-center max-w-xl mx-auto" id="form">
                     <h2 class="font-bask text-3xl">Nous contacter</h2>
                     <div class="form-content">
-                        <form action="/#form" method="post" class="space-y-5">
+                        <form action="/#form" method="post" class="space-y-5" id="contact-form">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                                <input type="text" placeholder="Nom">
-                                <input type="text" placeholder="Email">
+                                <input type="text" placeholder="Nom" name="nom">
+                                <input type="text" placeholder="Email" name="email">
                             </div>
-                            <input type="text" placeholder="Sujet">
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Votre message"></textarea>
-                            <button type="submit">envoyer</button>
+                            <input type="text" placeholder="Sujet" name="subject">
+                            <textarea name="message" id="" cols="30" rows="10" placeholder="Votre message"></textarea>
+                            <button class="g-recaptcha"
+                                    data-sitekey="6LcQ1QsbAAAAAI6j5AXxSzrfyp4isd2_5WdEzfFt"
+                                    data-callback='onSubmit'
+                                    data-action='submit' type="submit">envoyer</button>
                         </form>
                     </div>
                 </div>
@@ -313,6 +335,12 @@ require_once 'vendor/autoload.php';
     </div>
 </footer>
 <script src="https://kit.fontawesome.com/ef35c8849c.js" crossorigin="anonymous"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    function onSubmit(token) {
+        document.getElementById("contact-form").submit();
+    }
+</script>
 <script src="dist/js/app.js"></script>
 </body>
 </html>
