@@ -48,6 +48,18 @@
                             </div>
                             <input type="text" placeholder="Sujet" name="subject">
                             <textarea name="message" id="" cols="30" rows="10" placeholder="Votre message"></textarea>
+                            <?php if (!empty($_POST)): ?>
+                                <?php if (!$error): ?>
+                                    <div class="p-3 bg-primary-default text-white">
+                                        Votre message a bien été envoyé.
+                                    </div>
+                                    <?php else: ?>
+                                    <div class="p-3 bg-red-800 text-white">
+                                        Une erreur est survenue, veuillez réessayer.
+                                    </div>
+                                <?php endif; ?>
+
+                            <?php endif; ?>
                             <button class="g-recaptcha"
                                     data-sitekey="6LcQ1QsbAAAAAI6j5AXxSzrfyp4isd2_5WdEzfFt"
                                     data-callback='onSubmit'

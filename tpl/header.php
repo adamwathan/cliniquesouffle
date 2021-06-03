@@ -20,7 +20,7 @@ if (!empty($_POST)) {
     curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($verify);
 
-    $response = json_decode($response);
+    $response = json_decode($response, true);
 
     // Nettoyage des données du formulaire
     foreach ($_POST as $key => $value) {
@@ -98,7 +98,7 @@ if (!empty($_POST)) {
             </a>
         </li>
         <li class="menu-item">
-            <a href="">
+            <a href="medecin.php">
                 Médecin
             </a>
         </li>

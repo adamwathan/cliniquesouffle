@@ -182,16 +182,16 @@ require 'tpl/header.php';
                 <h2 class="text-2xl text-primary-default font-bask italic uppercase">Espace de téléchargement</h2>
                 <ul class="pl-3">
                     <li>
-                        <i class="fal fa-file-pdf mr-4"></i> <a href="">Plaquette de présentation des cliniques</a>
+                        <i class="fal fa-file-pdf mr-4"></i> <a href="https://www.cliniquedusouffle.com/pdf/2021/plaquette-cliniques-du-souffleavril2021.pdf">Plaquette de présentation des cliniques</a>
                     </li>
                     <li>
-                        <i class="fal fa-file-pdf mr-4"></i> <a href="">Fiche médicale</a>
+                        <i class="fal fa-file-pdf mr-4"></i> <a href="https://www.cliniquedusouffle.com/pdf/2021/1-fiche-meidicalecds-korian2021.pdf">Fiche médicale</a>
                     </li>
                     <li>
-                        <i class="fal fa-file-pdf mr-4"></i> <a href="">Fiche de préadmission Clinique du Souffle</a>
+                        <i class="fal fa-file-pdf mr-4"></i> <a href="https://www.cliniquedusouffle.com/pdf/2021/2-fiche-preadmissioncds-korian2021.pdf">Fiche de préadmission Clinique du Souffle</a>
                     </li>
                     <li>
-                        <i class="fal fa-file-pdf mr-4"></i> <a href="">Fiche de préadmission Val Pyrène</a>
+                        <i class="fal fa-file-pdf mr-4"></i> <a href="https://www.cliniquedusouffle.com/pdf/2021/fiche-preadmissionval-pyrene2021-v4.pdf">Fiche de préadmission Val Pyrène</a>
                     </li>
                 </ul>
             </div>
