@@ -21,15 +21,15 @@
 
   input[type=text], input[type=email], textarea {
     @apply border border-white bg-transparent p-2 w-full;
-
-    &::placeholder {
-      @apply text-white;
-    }
   }
 
   button[type=submit] {
     @apply bg-white text-souffle block py-1 w-1/4 mx-auto uppercase;
   }
+}
+
+input::placeholder, textarea::placeholder {
+  color: white;
 }
 
 html {
@@ -112,7 +112,7 @@ nav {
 
 .who-are {
   @apply py-20;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('/assets/images/who-are-background.jpg') center center no-repeat;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('../images/who-are-background.jpg') center center no-repeat;
   background-size: cover;
 }
 
@@ -134,7 +134,7 @@ nav {
 }
 
 .top-footer {
-  background-image: url('/assets/images/footer-bg.png');
+  background-image: url('../images/footer-bg.png');
   background-repeat: no-repeat;
   height: 218px;
   top: -218px;

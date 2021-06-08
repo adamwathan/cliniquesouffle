@@ -4,8 +4,8 @@ require 'tpl/header.php';
 
     <section class="pt-20 pb-96">
         <div class="container">
-            <div class="nurse flex flex-col items-center justify-center text-primary-default">
-                <img src="/assets/images/medical.png" alt="" class="block mb-5">
+            <div class="nurse flex flex-col items-center justify-center text-primary-default text-4xl italic">
+                <img src="dist/images/medical.png" alt="" class="block mb-5">
                 Vous êtes un médecin ?
             </div>
             <div class="title text-3xl font-bask italic font-bold uppercase text-primary-default mt-10">

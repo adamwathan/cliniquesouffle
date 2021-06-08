@@ -79,7 +79,7 @@ if (!empty($_POST)) {
 <body>
 <header class="container flex flex-col md:flex-row justify-between items-center my-5">
     <div class="logo mb-10 md:mb-0">
-        <img src="assets/images/Korian_LogoCouleur.png" alt="" class="w-full">
+        <a href="index.php"><img src="assets/images/Korian_LogoCouleur.png" alt="" class="w-full"></a>
     </div>
     <div class="contact">
         <img src="assets/images/GROUPE_CONTACT.png" alt="" class="w-full">

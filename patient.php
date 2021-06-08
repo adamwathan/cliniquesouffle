@@ -5,12 +5,12 @@ require 'tpl/header.php';
     <section class="pt-20 pb-96">
         <div class="container">
             <div class="flex justify-center">
-                <div class="patient flex flex-col items-center justify-center text-souffle">
-                    <img src="/assets/images/patient.png" alt="" class="block mb-5">
+                <div class="patient flex flex-col items-center justify-center text-souffle text-4xl italic">
+                    <img src="assets/images/patient.png" alt="" class="block mb-5">
                     Vous êtes un patient ?
                 </div>
             </div>
-            <div class="title text-3xl font-bask italic font-bold uppercase text-primary-default">
+            <div class="title text-3xl font-bask italic font-bold uppercase text-primary-default mt-10">
                 <h2>
                     <span class="w-12 h-12 bg-souffle text-white inline-flex justify-center items-center mr-5 ">1.</span>Le
                     concept</h2>

@@ -2,7 +2,7 @@
     <div class="top-footer absolute"></div>
     <div class="footer-content bg-souffle">
         <div class="container text-white">
-            <img src="/assets/images/korian_blanc.png" alt="">
+            <img src="assets/images/korian_blanc.png" alt="">
             <div class="contact py-10">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="left mb-10 md:mb-0">
@@ -12,7 +12,7 @@
                             3055 Avenue de prades <br>
                             66000 Perpignan
                         </p>
-                        <a href="#" class="uppercase font-bold">
+                        <a href="https://goo.gl/maps/durZKjkNBJD174d2A" target="_blank" class="uppercase font-bold text-white">
                             Plan d'accès
                         </a>
                     </div>
@@ -22,7 +22,7 @@
                         </div>
                         <div class="mb-10">
                             <a class="btn-link text-white flex justify-end items-center" href="#">
-                                <span><img src="/assets/images/footer-phone.jpg" alt=""></span>
+                                <span><img src="assets/images/footer-phone.jpg" alt=""></span>
                             </a>
                         </div>
                         <div class="mb-10">
