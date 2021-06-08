@@ -61,7 +61,7 @@
 
                             <?php endif; ?>
                             <button class="g-recaptcha"
-                                    data-sitekey="6LcQ1QsbAAAAAI6j5AXxSzrfyp4isd2_5WdEzfFt"
+                                    data-sitekey=""
                                     data-callback='onSubmit'
                                     data-action='submit' type="submit">envoyer</button>
                         </form>

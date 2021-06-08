@@ -8,7 +8,7 @@ $error = false;
 if (!empty($_POST)) {
 
     $data = array(
-        'secret' => "6LcQ1QsbAAAAAG6tkBihRVZE-Eg9YL3zJqV_5ALN",
+        'secret' => "",
         'response' => $_POST['g-recaptcha-response']
     );
 
