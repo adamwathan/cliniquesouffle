@@ -13,6 +13,7 @@
     "laravel-mix": "^6.0.19",
     "postcss-import": "^14.0.2",
     "postcss-nested": "^5.0.5",
+    "postcss-preset-env": "^6.7.0",
     "tiny-slider": "^2.9.3"
   },
   "devDependencies": {

@@ -19,7 +19,7 @@ module.exports = {
         secondary : {
           default: '#FFB604'
         },
-        souffle: '#00aec4'
+        souffle: '#00b1c6'
       }
     },
   },
